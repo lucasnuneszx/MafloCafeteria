@@ -14,14 +14,12 @@ export default function ConceptSection() {
     offset: ["start end", "end start"],
   });
 
-  // Subtle parallax: moves image slightly slower than scroll
   const y = useTransform(scrollYProgress, [0, 1], [-30, 30]);
 
   return (
     <section id="conceito" className="section-py bg-gradient-to-b from-[#FAF8F6] via-[#FAF8F6] to-white">
       <div className="container-maflo">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-          {/* Text column */}
           <div className="flex flex-col gap-8 order-2 lg:order-1">
             <SectionTitle
               eyebrow="01 — Conceito"
@@ -77,13 +75,11 @@ export default function ConceptSection() {
             </Reveal>
           </div>
 
-          {/* Image column with parallax */}
           <div
             ref={imageRef}
             className="relative order-1 lg:order-2 overflow-hidden rounded-xl"
             style={{ aspectRatio: "4/5" }}
           >
-            {/* Floral watermark behind image */}
             <div className="absolute -top-8 -right-8 z-0 floral-watermark" aria-hidden="true">
               <svg width="200" height="200" viewBox="0 0 200 200" fill="none">
                 <circle cx="100" cy="100" r="80" stroke="#C58B66" strokeWidth="0.8" />
@@ -120,7 +116,6 @@ export default function ConceptSection() {
           </div>
         </div>
 
-        {/* Divider */}
         <SectionDivider className="mt-20 lg:mt-28" />
       </div>
     </section>

@@ -63,7 +63,6 @@ export default function PerfilContent() {
 
   return (
     <div className="flex flex-col gap-6">
-      {/* Account info */}
       <motion.div
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
@@ -81,7 +80,6 @@ export default function PerfilContent() {
         </div>
       </motion.div>
 
-      {/* Password */}
       <motion.div
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
@@ -127,7 +125,6 @@ export default function PerfilContent() {
         </form>
       </motion.div>
 
-      {/* Sign out */}
       <motion.div
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}

@@ -1,7 +1,5 @@
-// src/lib/motion-variants.ts
 import type { Variants } from "framer-motion";
 
-// Custom easing — easeOutExpo feel for premium sensation
 const easeOut = [0.22, 1, 0.36, 1] as const;
 
 export const fadeIn: Variants = {

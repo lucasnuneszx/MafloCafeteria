@@ -50,7 +50,6 @@ export default function GallerySection() {
           />
         </div>
 
-        {/* Carousel */}
         <div className="relative">
           <div
             ref={trackRef}
@@ -77,7 +76,6 @@ export default function GallerySection() {
                     sizes="(max-width: 640px) 72vw, (max-width: 1024px) 42vw, 28vw"
                     loading="lazy"
                   />
-                  {/* Hover overlay */}
                   <div className="absolute inset-0 bg-[#352B28]/0 group-hover:bg-[#352B28]/30 transition-all duration-300 flex items-center justify-center">
                     <Expand
                       size={20}
@@ -91,7 +89,6 @@ export default function GallerySection() {
             ))}
           </div>
 
-          {/* Carousel controls */}
           <button
             onClick={() => scrollCarousel("prev")}
             className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 items-center justify-center p-2.5 rounded-full bg-white text-[#352B28] shadow-maflo border border-[#E8E2DD] hover:bg-[#C58B66] hover:text-white transition-colors duration-300"
@@ -108,7 +105,6 @@ export default function GallerySection() {
           </button>
         </div>
 
-        {/* Lightbox */}
         <Dialog open={selectedIndex !== null} onOpenChange={closeLightbox}>
           <DialogContent
             className="max-w-4xl w-full bg-[#1a1512] border-none p-0 overflow-hidden"
@@ -135,12 +131,10 @@ export default function GallerySection() {
                     />
                   </div>
 
-                  {/* Caption */}
                   <p className="px-6 py-3 font-sans text-xs text-white/50 text-center">
                     {selected.alt}
                   </p>
 
-                  {/* Navigation */}
                   <button
                     onClick={() => navigate("prev")}
                     className="absolute left-3 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/40 text-white hover:bg-black/60 transition-colors duration-300"
@@ -156,7 +150,6 @@ export default function GallerySection() {
                     <ChevronRight size={20} />
                   </button>
 
-                  {/* Close */}
                   <button
                     onClick={closeLightbox}
                     className="absolute top-3 right-3 p-2 rounded-full bg-black/40 text-white hover:bg-black/60 transition-colors duration-300"

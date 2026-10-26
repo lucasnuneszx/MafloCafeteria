@@ -1,4 +1,3 @@
-// src/components/sections/testimonials-section.tsx
 import SectionTitle from "@/components/shared/section-title";
 import TestimonialCard from "@/components/shared/testimonial-card";
 import SectionDivider from "@/components/shared/section-divider";

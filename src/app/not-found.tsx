@@ -1,4 +1,3 @@
-// src/app/not-found.tsx
 import Link from "next/link";
 import Logo from "@/components/icons/logo";
 

@@ -21,7 +21,6 @@ export default function ExperienceSection() {
     <section id="experiencia" className="section-py bg-gradient-to-b from-[#FAF8F6] via-[#FAF8F6] to-white" ref={sectionRef}>
       <div className="container-maflo">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Text block */}
           <div className="flex flex-col gap-6">
             <SectionTitle
               eyebrow="02 — Experiência"
@@ -74,7 +73,6 @@ export default function ExperienceSection() {
                   sizes="(max-width: 1024px) 90vw, 40vw"
                   quality={85}
                 />
-                {/* Subtle overlay */}
                 <div className="absolute inset-0 bg-[#352B28]/10" />
               </div>
             </motion.div>

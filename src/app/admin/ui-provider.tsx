@@ -6,8 +6,6 @@ import { CheckCircle2, XCircle, TriangleAlert, X } from "lucide-react";
 
 const easeOut = [0.22, 1, 0.36, 1] as const;
 
-// ==================== TOAST ====================
-
 type ToastKind = "success" | "error" | "info";
 
 interface ToastItem {
@@ -46,8 +44,6 @@ export function useToast() {
   return ctx.showToast;
 }
 
-// ==================== CONFIRM ====================
-
 interface ConfirmOptions {
   title: string;
   description?: string;
@@ -65,8 +61,6 @@ export function useConfirm() {
   if (!ctx) throw new Error("useConfirm must be used within AdminUIProvider");
   return ctx;
 }
-
-// ==================== PROVIDER ====================
 
 export default function AdminUIProvider({ children }: { children: ReactNode }) {
   const [toasts, setToasts] = useState<ToastItem[]>([]);
@@ -104,7 +98,6 @@ export default function AdminUIProvider({ children }: { children: ReactNode }) {
       <ConfirmContext.Provider value={confirmAction}>
         {children}
 
-        {/* Toast stack */}
         <div className="fixed bottom-5 right-5 z-[100] flex flex-col gap-2 pointer-events-none">
           <AnimatePresence>
             {toasts.map((toast) => {
@@ -134,7 +127,6 @@ export default function AdminUIProvider({ children }: { children: ReactNode }) {
           </AnimatePresence>
         </div>
 
-        {/* Confirm modal */}
         <AnimatePresence>
           {confirmState && (
             <motion.div

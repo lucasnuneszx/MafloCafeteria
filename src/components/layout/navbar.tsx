@@ -55,12 +55,10 @@ export default function Navbar() {
           className="flex items-center justify-between h-16 md:h-20"
           aria-label="Navegação principal"
         >
-          {/* Logo */}
           <Link href="#inicio" onClick={() => handleNavClick("#inicio")} aria-label="Maflô — Início">
             <Logo variant="dark" className="transition-opacity duration-300" />
           </Link>
 
-          {/* Desktop nav links */}
           <ul className="hidden lg:flex items-center gap-8" role="list">
             {navLinks.map((link) => (
               <li key={link.href}>
@@ -74,7 +72,6 @@ export default function Navbar() {
             ))}
           </ul>
 
-          {/* CTA Button */}
           <div className="hidden lg:flex items-center gap-4">
             <button
               onClick={() => handleNavClick("#eventos")}
@@ -88,7 +85,6 @@ export default function Navbar() {
             </button>
           </div>
 
-          {/* Mobile menu */}
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger
               className="lg:hidden p-2 rounded-md transition-colors duration-300"
@@ -106,7 +102,6 @@ export default function Navbar() {
               aria-label="Menu de navegação mobile"
             >
               <div className="flex flex-col h-full">
-                {/* Sheet header */}
                 <div className="flex items-center justify-between px-8 py-6 border-b border-[#E8E2DD]">
                   <Logo variant="dark" />
                   <button
@@ -118,7 +113,6 @@ export default function Navbar() {
                   </button>
                 </div>
 
-                {/* Mobile nav links */}
                 <nav className="flex flex-col gap-1 px-8 py-8 flex-1">
                   {navLinks.map((link, i) => (
                     <motion.div
@@ -137,7 +131,6 @@ export default function Navbar() {
                   ))}
                 </nav>
 
-                {/* Mobile CTA */}
                 <div className="px-8 pb-10">
                   <button
                     onClick={() => handleNavClick("#eventos")}

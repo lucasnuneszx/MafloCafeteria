@@ -24,9 +24,7 @@ export default function Hero() {
       className="relative min-h-[100dvh] flex flex-col overflow-hidden bg-gradient-to-b from-[#F4EFEA] via-[#F4EFEA] to-[#FAF8F6]"
       aria-label="Seção principal — Maflô Cafeteria"
     >
-      {/* Delicate botanical line-art background elements for premium feel */}
       <div className="absolute inset-0 z-0 opacity-[0.07] pointer-events-none select-none flex items-center justify-center overflow-hidden">
-        {/* Left organic shape */}
         <svg
           className="absolute -left-20 -bottom-20 w-[500px] h-[500px] text-[#C58B66]"
           viewBox="0 0 200 200"
@@ -46,20 +44,17 @@ export default function Hero() {
           />
         </svg>
 
-        {/* Right elegant branch */}
         <svg
           className="absolute -right-32 -top-12 w-[600px] h-[600px] text-[#C58B66]"
           viewBox="0 0 200 200"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          {/* Main branch curve */}
           <path
             d="M20,180 Q100,140 150,50"
             stroke="currentColor"
             strokeWidth="0.75"
           />
-          {/* Leaves/petals */}
           <path d="M70,145 Q60,125 50,135 Q65,140 70,145 Z" fill="currentColor" />
           <path d="M100,120 Q115,100 125,110 Q110,115 100,120 Z" fill="currentColor" />
           <path d="M125,90 Q115,70 105,80 Q120,85 125,90 Z" fill="currentColor" />
@@ -69,7 +64,6 @@ export default function Hero() {
         </svg>
       </div>
 
-      {/* Content */}
       <div className="container-maflo relative z-10 flex flex-1 flex-col items-center justify-center text-center gap-8 pt-20">
         <motion.div
           variants={heroStagger}
@@ -77,12 +71,10 @@ export default function Hero() {
           animate="visible"
           className="flex flex-col items-center gap-6 max-w-4xl"
         >
-          {/* Real Brand Logo showcase */}
           <motion.div variants={fadeUp} className="mb-4">
             <Logo variant="dark" height={160} />
           </motion.div>
 
-          {/* H1 */}
           <motion.h1
             variants={fadeUp}
             className="text-hero text-[#352B28]"
@@ -92,7 +84,6 @@ export default function Hero() {
             <em className="not-italic text-[#C58B66]">o conceito.</em>
           </motion.h1>
 
-          {/* Subtitle */}
           <motion.p
             variants={fadeUp}
             className="font-sans text-base md:text-lg text-[#352B28]/85 max-w-lg leading-relaxed font-medium"
@@ -100,7 +91,6 @@ export default function Hero() {
             Grãos selecionados, métodos autorais e um espaço pensado para durar na memória.
           </motion.p>
 
-          {/* CTAs */}
           <motion.div
             variants={fadeUp}
             className="flex flex-col sm:flex-row items-center gap-3 mt-2"
@@ -121,7 +111,6 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Scroll indicator */}
       <motion.div
         variants={fadeIn}
         initial="hidden"

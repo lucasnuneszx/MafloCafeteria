@@ -1,12 +1,6 @@
-// src/lib/constants.ts
-//
-// WhatsApp number, Instagram URL, Maps embed URL, Google review URL and
-// business hours used to live here, backed by NEXT_PUBLIC_* env vars. They
-// are now editable content, stored in the `site_settings` table and served
-// through `getSiteSettings()` (@/lib/site-settings) — see /admin/configuracoes.
+// Contact links and business hours live in `site_settings` (see @/lib/site-settings).
 import type { Testimonial, GalleryImage } from "@/types";
 
-// ==================== TESTIMONIALS ====================
 export const testimonials: Testimonial[] = [
   {
     id: "t1",
@@ -28,7 +22,6 @@ export const testimonials: Testimonial[] = [
   },
 ];
 
-// ==================== GALLERY ====================
 export const galleryImages: GalleryImage[] = [
   {
     id: "g8",
@@ -116,7 +109,6 @@ export const galleryImages: GalleryImage[] = [
   },
 ];
 
-// ==================== EVENT BOOKING ====================
 export const eventOccasions = [
   "Aniversário",
   "Reunião corporativa",
@@ -125,7 +117,6 @@ export const eventOccasions = [
   "Outro",
 ];
 
-// ==================== AGENDA DAY OPTIONS (admin) ====================
 export const dayOfWeekOptions = [
   { value: 1, label: "Segunda-feira" },
   { value: 2, label: "Terça-feira" },
@@ -136,7 +127,6 @@ export const dayOfWeekOptions = [
   { value: 0, label: "Domingo" },
 ];
 
-// ==================== NAV LINKS ====================
 export const navLinks = [
   { label: "Início", href: "#inicio" },
   { label: "Conceito", href: "#conceito" },
@@ -146,7 +136,6 @@ export const navLinks = [
   { label: "Contato", href: "#localizacao" },
 ];
 
-// ==================== ADDRESS ====================
 const fullAddress = "R. Marcos Freire, 364, Caminho das Árvores, Salvador - BA, 41820-780";
 
 export const address = {

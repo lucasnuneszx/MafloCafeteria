@@ -4,9 +4,7 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* ===========================
-   MAFLÔ DESIGN TOKENS
-   =========================== */
+/* Tokens */
 @theme inline {
   /* Brand Colors */
   --color-background: var(--maflo-background);
@@ -54,9 +52,7 @@
   --radius: 0.75rem;
 }
 
-/* ===========================
-   BASE STYLES
-   =========================== */
+/* Base */
 @layer base {
   /* Scrolling itself is smoothed by Lenis (see SmoothScroll component) when
      the user has no reduced-motion preference; see src/lib/lenis.ts. */
@@ -94,9 +90,7 @@
   }
 }
 
-/* ===========================
-   TYPOGRAPHY UTILITIES
-   =========================== */
+/* Utilitários */
 @layer utilities {
   .font-heading {
     font-family: var(--font-cormorant), "Georgia", serif;
@@ -262,9 +256,7 @@
   }
 }
 
-/* ===========================
-   REDUCE MOTION
-   =========================== */
+/* Movimento reduzido */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

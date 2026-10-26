@@ -28,7 +28,6 @@ export default function TestimonialCard({ testimonial, delay = 0 }: TestimonialC
       }}
       className="flex flex-col gap-6 p-8 bg-white border border-[#E8E2DD] rounded-xl shadow-maflo"
     >
-      {/* Quote icon */}
       <Quote
         size={22}
         className="text-[#C58B66]"
@@ -36,12 +35,10 @@ export default function TestimonialCard({ testimonial, delay = 0 }: TestimonialC
         aria-hidden="true"
       />
 
-      {/* Quote text */}
       <blockquote className="font-sans text-base italic leading-relaxed text-[rgba(53,43,40,0.8)] flex-1">
         &ldquo;{testimonial.quote}&rdquo;
       </blockquote>
 
-      {/* Author */}
       <footer className="flex flex-col gap-0.5 border-t border-[#E8E2DD] pt-4">
         <cite className="font-heading not-italic text-base font-500 text-[#352B28]">
           {testimonial.author}

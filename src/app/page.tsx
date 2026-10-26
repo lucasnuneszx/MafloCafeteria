@@ -1,4 +1,3 @@
-// src/app/page.tsx
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
 import Hero from "@/components/sections/hero";
@@ -14,7 +13,7 @@ import LocationSection from "@/components/sections/location-section";
 import CookieBanner from "@/components/shared/cookie-banner";
 import { getSiteSettings } from "@/lib/site-settings";
 
-// Content on this page (agenda, and soon site settings) is DB-backed and
+// Content on this page (agenda, site settings) is DB-backed and
 // editable from /admin — this must live on the page/route file itself.
 // Next.js only reads route segment config (revalidate, dynamic, etc.) from
 // page.tsx/layout.tsx/route.ts, never from an imported component module.

@@ -7,14 +7,12 @@ import Reveal from "@/components/shared/reveal";
 import InstagramIcon from "@/components/icons/instagram-icon";
 import { galleryImages } from "@/lib/constants";
 
-// Use first 8 images as Instagram grid (square crop)
 const instagramPosts = galleryImages.slice(0, 8);
 
 export default function InstagramSection({ instagramLink }: { instagramLink: string }) {
   return (
     <section id="instagram" className="section-py bg-gradient-to-b from-white via-white to-[#FAF8F6]">
       <div className="container-maflo">
-        {/* Header */}
         <div className="flex flex-col items-center gap-6 mb-12">
           <SectionTitle
             eyebrow="08 — Instagram"
@@ -63,7 +61,6 @@ export default function InstagramSection({ instagramLink }: { instagramLink: str
                 sizes="(max-width: 640px) 50vw, 25vw"
                 loading="lazy"
               />
-              {/* Hover overlay */}
               <div className="absolute inset-0 bg-[#352B28]/0 group-hover:bg-[#352B28]/40 transition-all duration-300 flex items-center justify-center">
                                   <InstagramIcon
                   size={22}

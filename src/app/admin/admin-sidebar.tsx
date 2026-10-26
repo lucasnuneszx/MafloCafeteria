@@ -119,7 +119,6 @@ export default function AdminSidebar({ badges = {} }: { badges?: Badges }) {
 
   return (
     <>
-      {/* Desktop sidebar */}
       <aside className="hidden lg:flex fixed inset-y-0 left-0 z-40 w-64 flex-col justify-between bg-[#1a1512] px-4 py-8">
         <div className="flex flex-col gap-10">
           <Link href="/admin" className="px-4">
@@ -133,7 +132,6 @@ export default function AdminSidebar({ badges = {} }: { badges?: Badges }) {
         </div>
       </aside>
 
-      {/* Mobile top bar */}
       <div className="lg:hidden sticky top-0 z-40 flex items-center justify-between border-b border-[#E8E2DD] bg-[#1a1512] px-5 py-4">
         <Link href="/admin">
           <Logo variant="light" height={32} />
@@ -150,7 +148,6 @@ export default function AdminSidebar({ badges = {} }: { badges?: Badges }) {
         </div>
       </div>
 
-      {/* Mobile drawer */}
       <AnimatePresence>
         {mobileOpen && (
           <>

@@ -78,7 +78,6 @@ export default function BarChart({ data, series, height = 220, formatValue }: Ba
 
       <div className="relative w-full overflow-x-auto">
         <svg viewBox={`0 0 ${width} ${height}`} className="w-full" style={{ minWidth: 480 }} role="img">
-          {/* Gridlines */}
           {Array.from({ length: gridLines + 1 }).map((_, i) => {
             const y = paddingTop + (plotHeight / gridLines) * i;
             const value = niceMax - (niceMax / gridLines) * i;
@@ -99,7 +98,6 @@ export default function BarChart({ data, series, height = 220, formatValue }: Ba
             );
           })}
 
-          {/* Bars */}
           {data.map((d, gi) => {
             const groupX = paddingLeft + gi * groupWidth;
             const innerStart = groupX + (groupWidth - series.length * barThickness - (series.length - 1) * barGap) / 2;

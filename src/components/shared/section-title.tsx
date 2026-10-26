@@ -1,4 +1,3 @@
-// src/components/shared/section-title.tsx
 import Reveal from "./reveal";
 
 interface SectionTitleProps {

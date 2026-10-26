@@ -1,4 +1,3 @@
-// src/components/layout/footer.tsx
 import Link from "next/link";
 import { MessageCircle } from "lucide-react";
 import Logo from "@/components/icons/logo";
@@ -12,9 +11,7 @@ export default async function Footer() {
   return (
     <footer className="bg-[#352B28] text-[#FAF8F6]" aria-label="Rodapé">
       <div className="container-maflo py-16 lg:py-20">
-        {/* Top grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 pb-12 border-b border-white/10">
-          {/* Brand column */}
           <div className="lg:col-span-1 flex flex-col gap-5">
             <Logo variant="light" />
             <p className="font-sans text-sm leading-relaxed text-white/55 max-w-[220px]">
@@ -22,7 +19,6 @@ export default async function Footer() {
             </p>
           </div>
 
-          {/* Menu column */}
           <div className="flex flex-col gap-4">
             <h3 className="font-sans text-xs tracking-widest uppercase text-[#C58B66] font-medium">
               Menu
@@ -41,7 +37,6 @@ export default async function Footer() {
             </ul>
           </div>
 
-          {/* Horários column */}
           <div className="flex flex-col gap-4">
             <h3 className="font-sans text-xs tracking-widest uppercase text-[#C58B66] font-medium">
               Horários
@@ -58,7 +53,6 @@ export default async function Footer() {
             </ul>
           </div>
 
-          {/* Contato column */}
           <div className="flex flex-col gap-4">
             <h3 className="font-sans text-xs tracking-widest uppercase text-[#C58B66] font-medium">
               Contato
@@ -71,7 +65,6 @@ export default async function Footer() {
                 <br />
                 {address.city}
               </address>
-              {/* Social links */}
               <div className="flex flex-col gap-2 mt-2">
                 {socialLinks.map((social) => (
                   <a
@@ -95,7 +88,6 @@ export default async function Footer() {
           </div>
         </div>
 
-        {/* Bottom bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <p className="font-sans text-xs text-white/35">
             © {new Date().getFullYear()} Maflô Cafeteria Conceito. Todos os direitos reservados.

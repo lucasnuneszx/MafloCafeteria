@@ -49,7 +49,6 @@ export default async function AdminDashboardPage() {
     }))
   );
 
-  // Today briefing
   const today = todayISO();
   const in7Days = addDaysISO(today, 7);
   const todayDow = todayDayOfWeek();

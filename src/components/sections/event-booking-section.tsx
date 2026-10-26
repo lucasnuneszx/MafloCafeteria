@@ -67,7 +67,6 @@ export default function EventBookingSection({ whatsappNumber }: { whatsappNumber
         <SectionDivider className="mb-20" />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
-          {/* Info column */}
           <div className="flex flex-col gap-6">
             <SectionTitle
               eyebrow="04 — Eventos"
@@ -93,7 +92,6 @@ export default function EventBookingSection({ whatsappNumber }: { whatsappNumber
             </Reveal>
           </div>
 
-          {/* Form column */}
           <Reveal delay={0.1} className="w-full">
             <form
               onSubmit={handleSubmit}

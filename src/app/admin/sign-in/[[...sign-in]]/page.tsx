@@ -143,7 +143,6 @@ export default function SignInPage() {
         <FloralMotif className="absolute -right-24 -top-20 w-[420px] h-[420px] text-[#C58B66] opacity-[0.15] pointer-events-none select-none" />
       </div>
 
-      {/* Visual side (lg+) */}
       <div className="relative hidden lg:block overflow-hidden bg-[#1a1512]">
         <motion.div
           initial={{ scale: 1.08 }}
@@ -191,9 +190,7 @@ export default function SignInPage() {
         </div>
       </div>
 
-      {/* Form side */}
       <div className="relative flex items-center justify-center overflow-hidden px-6 py-16">
-        {/* Ambient light accents (visible on both the cream and the photo backdrop) */}
         <motion.div
           animate={{ opacity: [0.5, 0.9, 0.5] }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
@@ -215,7 +212,6 @@ export default function SignInPage() {
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
         >
-          {/* Pulsing glow halo behind the card */}
           <motion.div
             aria-hidden="true"
             animate={{ opacity: [0.35, 0.65, 0.35] }}
@@ -229,7 +225,6 @@ export default function SignInPage() {
             style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
             className="relative overflow-hidden rounded-2xl border border-white/10 lg:border-[#E8E2DD] bg-white/95 backdrop-blur-2xl p-8 sm:p-10 shadow-[0_30px_80px_rgba(0,0,0,0.35)] lg:shadow-[0_20px_60px_rgba(53,43,40,0.1)]"
           >
-            {/* Shimmering top accent */}
             <div className="absolute top-0 left-0 right-0 h-[3px] overflow-hidden">
               <motion.div
                 animate={{ x: ["-120%", "220%"] }}
@@ -238,7 +233,6 @@ export default function SignInPage() {
               />
             </div>
 
-            {/* Corner floral watermark */}
             <FloralMotif className="absolute -bottom-10 -left-10 w-40 h-40 text-[#C58B66] opacity-[0.07] pointer-events-none select-none" />
 
             <motion.div {...reveal(0.15)} className="relative flex lg:hidden justify-center mb-5">

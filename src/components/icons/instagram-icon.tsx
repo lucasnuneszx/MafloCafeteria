@@ -1,4 +1,3 @@
-// src/components/icons/instagram-icon.tsx
 interface InstagramIconProps {
   size?: number;
   className?: string;

@@ -1,4 +1,3 @@
-// src/components/sections/location-section.tsx
 import { MapPin, Clock, MessageCircle, Navigation } from "lucide-react";
 import SectionTitle from "@/components/shared/section-title";
 import Reveal from "@/components/shared/reveal";
@@ -16,7 +15,6 @@ export default async function LocationSection() {
         <SectionDivider className="mb-20" />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
-          {/* Info column */}
           <div className="flex flex-col gap-10">
             <SectionTitle
               eyebrow="09 — Localização"
@@ -24,7 +22,6 @@ export default async function LocationSection() {
               align="left"
             />
 
-            {/* Address */}
             <Reveal delay={0.1}>
               <div className="flex flex-col gap-3">
                 <div className="flex items-start gap-3">
@@ -72,7 +69,6 @@ export default async function LocationSection() {
               </div>
             </Reveal>
 
-            {/* Hours */}
             <Reveal delay={0.2}>
               <div className="flex items-start gap-3">
                 <Clock
@@ -100,7 +96,6 @@ export default async function LocationSection() {
               </div>
             </Reveal>
 
-            {/* WhatsApp CTA */}
             <Reveal delay={0.3}>
               <a
                 href={whatsappLink}
@@ -115,7 +110,6 @@ export default async function LocationSection() {
             </Reveal>
           </div>
 
-          {/* Map column */}
           <Reveal delay={0.15} className="w-full">
             <div className="relative w-full overflow-hidden rounded-xl border border-[#E8E2DD] shadow-maflo">
               <div className="aspect-[4/3]">
@@ -131,7 +125,6 @@ export default async function LocationSection() {
                   className="absolute inset-0 w-full h-full"
                 />
               </div>
-              {/* Map overlay pin label */}
               <div className="absolute bottom-4 left-4 bg-white/95 backdrop-blur-sm rounded-lg px-3 py-2 shadow-maflo flex items-center gap-2">
                 <MapPin size={14} className="text-[#C58B66]" strokeWidth={2} aria-hidden="true" />
                 <span className="font-sans text-xs font-medium text-[#352B28]">

@@ -1,5 +1,3 @@
-// src/types/index.ts
-
 export interface Testimonial {
   id: string;
   quote: string;
