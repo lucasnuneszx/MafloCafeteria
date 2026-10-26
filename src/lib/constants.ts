@@ -32,14 +32,14 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: "g4",
-    src: "/images/croissant-real.jpg",
+    src: "/images/croissant.jpg",
     alt: "Croissant artesanal servido em tábua de madeira",
     width: 943,
     height: 1280,
   },
   {
     id: "g9",
-    src: "/images/salgado-real.jpg",
+    src: "/images/torta-salgada.jpg",
     alt: "Torta salgada da casa decorada com ervas frescas",
     width: 1600,
     height: 1200,
