@@ -1,90 +1,62 @@
-# Maflô Cafeteria Conceito — Landing Page
+# Maflô Cafeteria Conceito
 
-Landing page institucional premium construída com Next.js 15, TypeScript, TailwindCSS v4, Framer Motion e shadcn/ui.
+Landing page da Maflô Cafeteria Conceito com um painel administrativo em `/admin` para agenda semanal, reservas de eventos, estoque, contas a pagar e configurações do site (contatos e horários).
 
-## Comandos
+## Stack
+
+- Next.js 16 (App Router), React 19, TypeScript
+- Tailwind CSS v4, shadcn/ui (Base UI), Framer Motion, Lenis
+- Drizzle ORM + Postgres (Neon)
+- Clerk para autenticação do painel
+
+## Rodando localmente
 
 ```bash
-# Desenvolvimento
+npm install
+# crie .env.local com as variáveis abaixo
 npm run dev
-
-# Build de produção
-npm run build
-
-# Iniciar servidor de produção
-npm run start
-
-# Verificação TypeScript
-npx tsc --noEmit
 ```
+
+Outros comandos:
+
+```bash
+npm run build                  # build de produção
+npm run start                  # serve o build
+npx tsc --noEmit               # checagem de tipos
+npx dotenv -e .env.local -- npx drizzle-kit push   # aplica o schema no banco
+```
+
+`scripts/seed-agenda.ts` insere uma agenda semanal de exemplo (rode com `tsx` ou equivalente, com `DATABASE_URL` definido).
 
 ## Variáveis de ambiente
 
-Copie `.env.example` para `.env.local` e preencha com os dados reais:
-
-```bash
-cp .env.example .env.local
-```
-
-| Variável | Descrição |
+| Variável | Uso |
 |---|---|
-| `NEXT_PUBLIC_WHATSAPP_NUMBER` | Número do WhatsApp (ex: `5511999999999`) |
-| `NEXT_PUBLIC_GOOGLE_MAPS_EMBED_URL` | URL do embed do Google Maps |
-| `NEXT_PUBLIC_INSTAGRAM_URL` | URL do perfil no Instagram |
-| `NEXT_PUBLIC_GOOGLE_REVIEW_URL` | Link para avaliação no Google (Google Maps / Perfil da Empresa) |
-| `NEXT_PUBLIC_GA_ID` | ID do Google Analytics 4 (opcional) |
+| `DATABASE_URL` | Conexão Postgres usada pela aplicação |
+| `DATABASE_URL_UNPOOLED` | Conexão direta, usada pelo `drizzle-kit` |
+| `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY` | Chave pública do Clerk |
+| `CLERK_SECRET_KEY` | Chave secreta do Clerk |
+| `ADMIN_ALLOWED_EMAILS` | E-mails (separados por vírgula) com acesso ao `/admin` |
 
-## Estrutura de pastas
+WhatsApp, Instagram, mapa, link de avaliação e horários não são variáveis de ambiente: ficam na tabela `site_settings` e são editados em `/admin/configuracoes`.
+
+## Estrutura
 
 ```
 src/
 ├── app/
-│   ├── layout.tsx          # Fontes, metadata, JSON-LD
-│   ├── page.tsx            # Composição da landing page
-│   ├── globals.css         # Design system, tokens, utilitários
-│   ├── sitemap.ts          # Sitemap automático
-│   ├── robots.ts           # robots.txt
-│   └── not-found.tsx       # Página 404 com identidade visual
+│   ├── page.tsx            # landing page
+│   └── admin/              # painel (agenda, reservas, estoque, financeiro, configurações)
 ├── components/
-│   ├── layout/
-│   │   ├── navbar.tsx      # Navbar fixa com transição de scroll
-│   │   └── footer.tsx      # Footer escuro com nav e social links
-│   ├── sections/
-│   │   ├── hero.tsx
-│   │   ├── concept-section.tsx
-│   │   ├── experience-section.tsx
-│   │   ├── gallery-section.tsx
-│   │   ├── event-booking-section.tsx  # Formulário de reserva de eventos → WhatsApp
-│   │   ├── testimonials-section.tsx
-│   │   ├── google-review-section.tsx  # CTA de avaliação no Google
-│   │   ├── instagram-section.tsx
-│   │   └── location-section.tsx
-│   ├── shared/
-│   │   ├── reveal.tsx              # Wrapper animação scroll-triggered
-│   │   ├── section-title.tsx
-│   │   ├── section-divider.tsx     # Divisor SVG floral
-│   │   ├── testimonial-card.tsx
-│   │   └── cookie-banner.tsx       # Banner LGPD
-│   └── icons/
-│       ├── logo.tsx
-│       └── instagram-icon.tsx
+│   ├── sections/           # seções da landing
+│   ├── layout/             # navbar e footer
+│   ├── shared/             # componentes reutilizáveis
+│   └── ui/                 # componentes shadcn/ui
 ├── lib/
-│   ├── constants.ts        # Dados: depoimentos, galeria, horários, ocasiões de evento
-│   ├── motion-variants.ts  # Variantes Framer Motion
-│   └── utils.ts
-└── types/
-    └── index.ts
-```
-
-## Checklist de assets pendentes (cliente)
-
-- [ ] Imagem/vídeo do hero → substituir `public/images/hero-bg.jpg`
-- [ ] Fotos reais restantes do espaço/produtos → substituir `public/images/concept-photo.png`, `experience-photo.png`, `gallery-01.png`, `gallery-02.png`, `gallery-03.png`, `gallery-05.png`, `gallery-06.png` (as demais já são fotos reais)
-- [ ] Endereço, WhatsApp, Instagram, Maps, link de avaliação no Google → preencher `.env.local`
-- [ ] Textos definitivos → editar `src/lib/constants.ts`
-
-## Deploy recomendado: Vercel
-
-```bash
-npm i -g vercel && vercel
+│   ├── actions/            # server actions do painel e do formulário de reserva
+│   ├── db/                 # schema e cliente Drizzle
+│   └── constants.ts        # depoimentos, galeria, links de navegação, endereço
+└── proxy.ts                # proteção das rotas /admin
+scripts/
+└── seed-agenda.ts
 ```
