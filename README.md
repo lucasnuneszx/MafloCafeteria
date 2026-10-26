@@ -1,36 +1,90 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Maflô Cafeteria Conceito — Landing Page
 
-## Getting Started
+Landing page institucional premium construída com Next.js 15, TypeScript, TailwindCSS v4, Framer Motion e shadcn/ui.
 
-First, run the development server:
+## Comandos
 
 ```bash
+# Desenvolvimento
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Build de produção
+npm run build
+
+# Iniciar servidor de produção
+npm run start
+
+# Verificação TypeScript
+npx tsc --noEmit
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Variáveis de ambiente
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Copie `.env.example` para `.env.local` e preencha com os dados reais:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+cp .env.example .env.local
+```
 
-## Learn More
+| Variável | Descrição |
+|---|---|
+| `NEXT_PUBLIC_WHATSAPP_NUMBER` | Número do WhatsApp (ex: `5511999999999`) |
+| `NEXT_PUBLIC_GOOGLE_MAPS_EMBED_URL` | URL do embed do Google Maps |
+| `NEXT_PUBLIC_INSTAGRAM_URL` | URL do perfil no Instagram |
+| `NEXT_PUBLIC_GOOGLE_REVIEW_URL` | Link para avaliação no Google (Google Maps / Perfil da Empresa) |
+| `NEXT_PUBLIC_GA_ID` | ID do Google Analytics 4 (opcional) |
 
-To learn more about Next.js, take a look at the following resources:
+## Estrutura de pastas
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+src/
+├── app/
+│   ├── layout.tsx          # Fontes, metadata, JSON-LD
+│   ├── page.tsx            # Composição da landing page
+│   ├── globals.css         # Design system, tokens, utilitários
+│   ├── sitemap.ts          # Sitemap automático
+│   ├── robots.ts           # robots.txt
+│   └── not-found.tsx       # Página 404 com identidade visual
+├── components/
+│   ├── layout/
+│   │   ├── navbar.tsx      # Navbar fixa com transição de scroll
+│   │   └── footer.tsx      # Footer escuro com nav e social links
+│   ├── sections/
+│   │   ├── hero.tsx
+│   │   ├── concept-section.tsx
+│   │   ├── experience-section.tsx
+│   │   ├── gallery-section.tsx
+│   │   ├── event-booking-section.tsx  # Formulário de reserva de eventos → WhatsApp
+│   │   ├── testimonials-section.tsx
+│   │   ├── google-review-section.tsx  # CTA de avaliação no Google
+│   │   ├── instagram-section.tsx
+│   │   └── location-section.tsx
+│   ├── shared/
+│   │   ├── reveal.tsx              # Wrapper animação scroll-triggered
+│   │   ├── section-title.tsx
+│   │   ├── section-divider.tsx     # Divisor SVG floral
+│   │   ├── testimonial-card.tsx
+│   │   └── cookie-banner.tsx       # Banner LGPD
+│   └── icons/
+│       ├── logo.tsx
+│       └── instagram-icon.tsx
+├── lib/
+│   ├── constants.ts        # Dados: depoimentos, galeria, horários, ocasiões de evento
+│   ├── motion-variants.ts  # Variantes Framer Motion
+│   └── utils.ts
+└── types/
+    └── index.ts
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Checklist de assets pendentes (cliente)
 
-## Deploy on Vercel
+- [ ] Imagem/vídeo do hero → substituir `public/images/hero-bg.jpg`
+- [ ] Fotos reais restantes do espaço/produtos → substituir `public/images/concept-photo.png`, `experience-photo.png`, `gallery-01.png`, `gallery-02.png`, `gallery-03.png`, `gallery-05.png`, `gallery-06.png` (as demais já são fotos reais)
+- [ ] Endereço, WhatsApp, Instagram, Maps, link de avaliação no Google → preencher `.env.local`
+- [ ] Textos definitivos → editar `src/lib/constants.ts`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deploy recomendado: Vercel
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm i -g vercel && vercel
+```
